@@ -1,0 +1,42 @@
+---
+import TextType from "../components/TextType";
+---
+
+<div class="flex flex-col gap-y-6">
+    <img
+        src="/images/me2.jpg"
+        alt="Me"
+        class="w-20 h-20 object-cover aspect-square overflow-hidden"
+    />
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <h1 class="text-[24px] font-geist font-semibold">
+            Carlos Hiram Sanchez
+        </h1>
+        <TextType
+            client:load
+            text={[
+                "software engineer",
+                "full stack dev",
+                "retired soccer player",
+            ]}
+            typingSpeed={75}
+            pauseDuration={1500}
+            showCursor
+            className="inline-flex w-fit bg-black p-1 px-2 text-sm text-white font-geist font-bold"
+            cursorCharacter="_"
+            deletingSpeed={50}
+            cursorBlinkDuration={0.5}
+        />
+    </div>
+    <div class="text-[16px] font-geist flex flex-col gap-y-2">
+        <p>I’m a 22-year-old Software Engineer passionate about building apps that make the difference </p>
+        <p>
+            I specialize in full-stack development because I enjoy suffering on
+            both ends of the stack
+        </p>
+        <p>
+            I spend my days building complex solutions for problems I usually
+            create myself.
+        </p>
+    </div>
+</div>

@@ -1,0 +1,110 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "../../styles/global.css";
+import ProjectDescription from "../../components/ProjectDescription";
+---
+
+<html lang="en">
+  <head>
+    <ClientRouter />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Flashy - Simple flashcard app</title>
+  </head>
+  <body class="bg-white text-foreground">
+    <a
+      href="/"
+      class="fixed left-6 top-6 flex items-center gap-2 rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm font-geist shadow-sm transition hover:shadow"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-arrow-left-icon lucide-arrow-left"
+        ><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg
+      >
+      <span>Return home</span>
+    </a>
+    <main
+      class="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-6 px-6 py-24 font-geist"
+    >
+      <h1
+        class="text-3xl font-semibold md:text-5xl"
+        transition:name="project-flashy"
+      >
+        Flashy - Simple flashcard app
+      </h1>
+      <p class="text-lg text-neutral-600">
+        Full Stack App / May 2024
+      </p>
+      <div class="flex flex-row items-center justify-start gap-4">
+        <a
+          href="https://github.com/hiiramsan/flashy-v2"
+          target="_blank"
+          class="inline-flex! items-center! gap-2! rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm font-geist shadow-sm transition hover:shadow"
+        >
+          <span>Visit the Github</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right shrink-0"
+            ><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg
+          >
+        </a>
+        <a
+          href="https://flashy-v2.vercel.app/"
+          target="_blank"
+          class="inline-flex! items-center! gap-2! rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm font-geist shadow-sm transition hover:shadow"
+        >
+          <span>Visit project</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right shrink-0"
+            ><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg
+          >
+        </a>
+      </div>
+      <img
+        src="/images/flashy.png"
+        alt="Project preview"
+        class="w-150 rounded-md"
+      />
+      <ProjectDescription
+        client:load
+        version1={[
+          "Flashy was built with Node, JavaScript, CSS, HTML, Express, and MongoDB. It was my first full stack project and the first app I actually used.",
+          "I built it because I was paying for a flashcards app and wanted a free version that did the same job.",
+          "It pushed me through the full flow: auth, CRUD, data models, and deployment.",
+          "People close to me know this project is meaningful to me, even if I see its flaws now.",
+        ]}
+        version2={[
+          "I am profoundly moved to reflect on the successful sunsetting of my initial venture into Full-Stack Architectural Engineering: the deployment of Flashy, a disruptive, vertically integrated Cognitive Retention Ecosystem.",
+          "What began as a strategic initiative to optimize my personal financial runway by pivoting away from high-friction, subscription-based SaaS (Study-as-a-Service) models, evolved into a masterclass in End-to-End Product Lifecycle Management. By architecting a robust solution using the high-concurrency Node/Express/MongoDB stack, I successfully engineered a proprietary 'Knowledge-Persistence' engine that neutralized the market dominance of legacy competitors.",
+          "This mission-critical project forced a deep-dive into the core pillars of enterprise software: implementing high-security Identity Management (Auth), establishing scalable Schema Design, and overseeing the rigorous Deployment Pipeline of my first truly production-ready asset. While I now view the initial MVP through a lens of Continuous Improvement and Iterative Refinement, the project remains a foundational milestone in my journey toward Technical Mastery.",
+          "#FullStackVisionary #DisruptiveLearning #CognitiveArchitecture #SaaSKiller #FinancialOptimization #BuildInPublic #LegacyCode"
+        ]}
+      />
+    </main>
+  </body>
+</html>

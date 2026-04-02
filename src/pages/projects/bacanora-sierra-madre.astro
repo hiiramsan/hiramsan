@@ -1,0 +1,110 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "../../styles/global.css";
+import ProjectDescription from "../../components/ProjectDescription";
+---
+
+<html lang="en">
+  <head>
+    <ClientRouter />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Bacanora Sierra Madre</title>
+  </head>
+  <body class="bg-white text-foreground">
+    <a
+      href="/"
+      class="fixed left-6 top-6 flex items-center gap-2 rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm font-geist shadow-sm transition hover:shadow"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-arrow-left-icon lucide-arrow-left"
+        ><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg
+      >
+      <span>Return home</span>
+    </a>
+    <main
+      class="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-6 px-6 py-24 font-geist"
+    >
+      <h1
+        class="text-3xl font-semibold md:text-5xl"
+        transition:name="project-bacanora"
+      >
+        Bacanora Sierra Madre
+      </h1>
+      <p class="text-lg text-neutral-600">
+        Landing Page / February 2026
+      </p>
+      <div class="flex flex-row items-center justify-start gap-4">
+        <a
+          href="https://github.com/hiiramsan/sierramadre"
+          target="_blank"
+          class="inline-flex! items-center! gap-2! rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm font-geist shadow-sm transition hover:shadow"
+        >
+          <span>Visit the Github</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right shrink-0"
+            ><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg
+          >
+        </a>
+        <a
+          href="https://bacanorasierramadre.vercel.app/"
+          target="_blank"
+          class="inline-flex! items-center! gap-2! rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm font-geist shadow-sm transition hover:shadow"
+        >
+          <span>Visit project</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right shrink-0"
+            ><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg
+          >
+        </a>
+      </div>
+      <img
+        src="/images/sierramadre.png"
+        alt="Project preview"
+        class="w-150 rounded-md"
+      />
+      <ProjectDescription
+        client:load
+        version1={[
+          "Built with Astro and Tailwind, this landing page gives Bacanora Sierra Madre a modern digital presence and highlights the product story.",
+          "My goal was to keep the layout clean and premium with strong typography, large imagery, and clear sections.",
+          "I love designing landing pages and I am looking for the next challenge to keep improving and deliver the best work.",
+        ]}
+        version2={[
+          "I am incredibly humbled to announce the successful digital transformation of Sierra Madre, a prestige heritage brand that I have officially transitioned into the high-stakes world of the 4.0 economy. By architecting a bespoke, cloud-optimized landing environment using an edge-first component model and a utility-first styling paradigm, I have effectively bridged the gap between ancestral artisanal craftsmanship and the ultra-modern consumer interface.",
+          "This initiative was never just about a 'web presence', it was a rigorous exercise in Premium Visual Storytelling and Global Brand Equity Localization. I deliberately curated a high-fidelity, minimalist layout anchored by authoritative typography and expansive imagery to maximize emotional engagement and drive stakeholder resonance. My focus was on establishing a 'digital distillery' where the product’s narrative isn't just viewed, but experienced through a friction-less, high-conversion UI.",
+          "As a devoted practitioner of Visual Excellence and Digital Architecture, I am now actively scouting for my next high-impact partnership. I am ready to leverage my unique design-thinking methodology to disrupt static industries and deliver world-class, market-ready digital assets that push the absolute boundaries of the modern web.",
+          "#HeritageDisruption #VisualCapital #DigitalDistillation #BrandEvolution #UIArchitect #ArtisanalInnovation #HighPerformanceDesign"
+        ]}
+      />
+      
+    </main>
+  </body>
+</html>

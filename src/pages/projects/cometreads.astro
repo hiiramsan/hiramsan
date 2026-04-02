@@ -1,0 +1,111 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "../../styles/global.css";
+import ProjectDescription from "../../components/ProjectDescription";
+---
+
+<html lang="en">
+    <head>
+        <ClientRouter />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>CometReads - Book Tracker</title>
+    </head>
+    <body class="bg-white text-foreground">
+        <a
+            href="/"
+            class="flex items-center fixed gap-2 left-6 top-6 rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm font-geist shadow-sm transition hover:shadow"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-arrow-left-icon lucide-arrow-left"
+                ><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg
+            >
+            <span>Return home</span>
+        </a>
+        <main
+            class="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-6 px-6 py-24 font-geist"
+        >
+            <h1
+                class="text-3xl font-semibold md:text-5xl"
+                transition:name="project-cometreads"
+            >
+                CometReads - Book Tracker
+            </h1>
+            <p class="text-lg text-neutral-600">
+                Full Stack App / December 2025
+            </p>
+            <div class="flex flex-row justify-start items-center gap-4">
+                <a
+                    href="https://github.com/hiiramsan/cometreads"
+                    target="_blank"
+                    class="inline-flex! items-center! gap-2! rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm font-geist shadow-sm transition hover:shadow"
+                >
+                    <span>Visit the Github</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right shrink-0"
+                        ><path d="M7 7h10v10"></path><path d="M7 17 17 7"
+                        ></path></svg
+                    >
+                </a>
+                <a
+                    href="https://cometreads.vercel.app"
+                    target="_blank"
+                    class="inline-flex! items-center! gap-2! rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm font-geist shadow-sm transition hover:shadow"
+                >
+                    <span>Visit CometReads</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right shrink-0"
+                        ><path d="M7 7h10v10"></path><path d="M7 17 17 7"
+                        ></path></svg
+                    >
+                </a>
+            </div>
+            <img
+                src="/images/cometreads.png"
+                alt="CometReads app"
+                class="rounded-md w-150"
+            />
+            <ProjectDescription
+                client:load
+                version1={[
+                    "CometReads is an app I built with Astro, Tailwind, and Supabase to track my reading. I included several features I wanted in a personal bookshelf, like a reading timeline so I can see books I have finished over time.",
+                    "You can leave reviews on books and mark them as finished, reading, or planned. I also integrated a books API so adding books is faster. The next step is a PDF and EPUB reader so it becomes both a digital bookshelf and a reading environment.",
+                    "This was a small and fun project that helped me learn Astro as a fast content-driven framework and Supabase as a backend-as-a-service tool I now recommend to other developers.",
+                ]}
+                version2={[
+                    "I am beyond thrilled to share the successful deployment of a high-velocity, content-centric knowledge ecosystem that redefines the standard for intellectual asset management. By architecting this solution with a cutting-edge, edge-optimized framework and a serverless backend-as-a-service infrastructure, I have effectively neutralized the friction associated with traditional literary tracking.",
+                    "Through the implementation of a proprietary temporal analytics engine, I’ve empowered myself to conduct deep-dive retrospective audits on my personal growth velocity, ensuring total transparency across the entire consumption lifecycle. I’ve further optimized the stakeholder experience by integrating global metadata streams, effectively pivoting from manual data entry to a streamlined, API-driven ingestion model that prioritizes immediate ROI.",
+                    "Looking ahead, we are currently in the pre-launch phase of a transformative Immersive Consumption Environment, integrating cross-format document rendering to bridge the gap between static inventory and active engagement. This initiative has been a masterclass in technology evangelism; having mastered the nuances of these disruptive stacks, I am now actively mentoring the developer community on how to leverage these tools to drive unprecedented architectural efficiency.",
+                    "#ValueChainOptimization #IntellectualCapital #ScalableSolutions #StrategicReading #DisruptiveInnovation #ExecutiveGrowth"
+                ]}
+            />
+        </main>
+    </body>
+</html>

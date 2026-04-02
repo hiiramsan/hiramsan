@@ -1,17 +1,40 @@
 ---
-
+import Presentation from "../components/Presentation.astro";
+import "../styles/global.css";	
+import Projects from "../components/Projects.astro";
+import Navbar from "../components/Navbar";
+import Toaster from "../components/Toaster";
+import MyStack from "../components/MyStack";
+import Experience from "../components/Experience";
+import Contact from "@/components/Contact";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <html lang="en">
 	<head>
+		<ClientRouter />
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Hiram Sanchez - Portfolio</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:wght@100..900&family=Manrope:wght@200..800&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body id="about">
+		<Navbar client:load />
+		<Toaster client:load />
+		<div class="mx-auto flex w-full max-w-4xl flex-col items-start justify-center gap-10 px-6 sm:px-12 lg:px-24 mt-10 mb-20">
+			<Presentation />
+			<Projects />
+			<MyStack />
+			<Experience client:load />
+		</div>
+		<Contact client:load />
 	</body>
 </html>

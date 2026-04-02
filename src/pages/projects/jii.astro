@@ -1,0 +1,66 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "../../styles/global.css";
+import ProjectDescription from "../../components/ProjectDescription";
+---
+
+<html lang="en">
+  <head>
+    <ClientRouter />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Jovenes Impulsando la Industria 2025</title>
+  </head>
+  <body class="bg-white text-foreground">
+    <a
+      href="/"
+      class="fixed left-6 top-6 flex items-center gap-2 rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm font-geist shadow-sm transition hover:shadow"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-arrow-left-icon lucide-arrow-left"
+        ><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg
+      >
+      <span>Return home</span>
+    </a>
+    <main
+      class="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-6 px-6 py-24 font-geist"
+    >
+      <h1
+        class="text-3xl font-semibold md:text-5xl"
+        transition:name="project-jii"
+      >
+        Jovenes Impulsando la Industria 2025
+      </h1>
+      <p class="text-lg text-neutral-600">Hackathon / May 2025</p>
+
+      <img
+        src="/images/image.png"
+        alt="Project preview"
+        class="w-150 rounded-md"
+      />
+      <ProjectDescription
+        client:load
+        version1={[
+          "I was part of the winning team in Jovenes Impulsando la Industria's IT Challenge, building an app for activity management, performance tracking, and task assignment in operations.",
+          "I served as designer and developer, shaping the UI and the core flow for tracking tasks and performance.",
+          "Working alongside a software company for the first time was a milestone in my education and I am very glad I had this opportunity",
+        ]}
+        version2={[
+          "I am absolutely humbled to announce that I recently spearheaded the Frontend Architecture and UI Strategy for a high-stakes, first-place winning initiative within the 'Jovenes Impulsando la Industria' IT Challenge. We successfully deployed a mission-critical Field Operations & Human Capital Intelligence System, specifically engineered to optimize the mission-readiness of elite drone flight crews and operational stakeholders.",
+          "Acting as both the Lead Interface Visionary and Frontend Engineer, I architected a robust, resilient 'Zero-Connectivity' framework, ensuring that mission data integrity remains uncompromised even in the most remote, edge-case environments. By designing a proprietary evidence-capture and task-validation protocol, I empowered ground-level operators to execute complex workflows, run performance diagnostics, and synchronize high-fidelity proof-of-work directly to the enterprise cloud.",
+          "Collaborating at a strategic level with a veteran software corporation was a transformative milestone, providing rigorous market validation for my ability to deliver enterprise-grade solutions. This project wasn't just about 'task tracking', it was about building the Next-Generation Backbone of Aerial Industrial Logistics and proving that I can deliver high-availability systems that survive the friction of real-world deployment.",
+          "#EdgeComputing #IndustrialMobility #DroneLogistics #FrontEndExcellence #ResilientArchitecture #Industry40 #OperationalTransparency"
+        ]}
+      />
+    </main>
+  </body>
+</html>
